@@ -1,0 +1,33 @@
+package pet;
+
+// 로봇애완동물 클래스
+public class RobotPet extends Pet {
+	
+	public RobotPet(String name, String masterName) {
+		super(name, masterName);
+	}
+	
+	// @ : 애노테이션(Annotation) - 자바의 컴파일어에게 알려주는 주석
+	
+	// 오버라이딩
+	@Override // 이 메소는 오버라이딩된 메소드라는 것을 컴파일러에게 알려줌.
+	public void introduce() {
+		System.out.println("◎ 저는 로봇펫입니다. 이름은 " + getName() + "입니다.");
+		System.out.println("◎ 주인님의 이름은 " + getMasterName() + "입니다.");
+	}
+	
+	// 추가 - 집안일을 하는 기능
+	public void work(int sw) {
+		switch(sw) {
+		case 1:
+			System.out.println("청소를 합니다.");
+			break;
+		case 2:
+			System.out.println("빨래를 합니다.");
+			break;
+		case 3:
+			System.out.println("밥상을 차립니다.");
+			break;
+		}
+	}
+}
